@@ -9,6 +9,11 @@ This resides in my ../src folder.
 
 ![alt text](https://github.com/csherwood-usgs/wave-current_profiles/raw/master/profs.png "Profiles")
 
+Here are the profiles (along- and across-wave directions) at point in the wave cycle where waves and currents combine to create the maximum speeds.
+
+![alt text](https://github.com/csherwood-usgs/wave-current_profiles/raw/master/comb_profs.png "Max. Profiles")
+
+
 ---
 
 `smith77.m` - This is a script that produces profiles of wave-orbital velocities only based on Smith, J.D. (1977) Chap. 13 in The Sea, vol. 6. The complete model is not here, because you need to know the wave-current _u*_. Maybe TODO: add that calculation. 
