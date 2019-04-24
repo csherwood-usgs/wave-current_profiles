@@ -55,9 +55,10 @@ ucx = zeros(nz,1);
 ucy = zeros(nz,1);
 below = (z<=delw);
 ucx(z<=delw) = (m.ustrc.^2/(vk*m.ustrr))*log(z(z<=delw)./zo) .*cos(phiwc);
-ucx(z>delw)  = (m.ustrc/vk)*log(z(z>delw)./zo) .*cos(phiwc);
+ucx(z>delw)  = (m.ustrc/vk)*log(z(z>delw)./m.zoa) .*cos(phiwc);
 ucy(z<=delw) = (m.ustrc.^2/(vk*m.ustrr))*log(z(z<=delw)./zo) .*sin(phiwc);
-ucy(z>delw)  = (m.ustrc/vk)*log(z(z>delw)./zo) .*sin(phiwc);
+ucy(z>delw)  = (m.ustrc/vk)*log(z(z>delw)./m.zoa) .*sin(phiwc);
+
 
 figure(1); clf
 plot(1.2*[-ubr ubr],[m.dwc,m.dwc],'--b')
