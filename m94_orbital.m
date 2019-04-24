@@ -59,7 +59,7 @@ ucx(z>delw)  = (m.ustrc/vk)*log(z(z>delw)./m.zoa) .*cos(phiwc);
 ucy(z<=delw) = (m.ustrc.^2/(vk*m.ustrr))*log(z(z<=delw)./zo) .*sin(phiwc);
 ucy(z>delw)  = (m.ustrc/vk)*log(z(z>delw)./m.zoa) .*sin(phiwc);
 
-
+% plots
 figure(1); clf
 plot(1.2*[-ubr ubr],[m.dwc,m.dwc],'--b')
 hold on
@@ -75,9 +75,12 @@ print -dpng profs.png
 figure(2); clf
 plot(1.2*[-ubr ubr],[m.dwc,m.dwc],'--b')
 hold on
-plot(ubp+ucx,z)
+h1=plot(ubp(:,1)+ucx,z,'-b')
+hold on
+h2=plot(ucy,z,'-r')
 set(gca,'yscale','log')
 ylabel('Elevation [m]')
 xlabel('Velocity [m/s]')
-title('Combined Velocity Profiles')
+legend([h1;h2],'parallel to wave direction','perpendicular to wave direction')
+title('Max. Combined Velocity Profiles')
 print -dpng comb_profs.png
